@@ -100,12 +100,12 @@ document.getElementById('letterForm').addEventListener('submit', async (e) => {
     });
 
     // Add background image
-    const imgUrl = '/Ashamsa Letter Pad.png';
+    const imgUrl = \`\${import.meta.env.BASE_URL}Ashamsa Letter pad.png\`;
     const imgElement = new Image();
     imgElement.src = imgUrl;
     await new Promise((resolve, reject) => {
         imgElement.onload = resolve;
-        imgElement.onerror = () => reject(new Error('Could not load background image. Ensure "Ashamsa Letter Pad.png" is in the public folder.'));
+        imgElement.onerror = () => reject(new Error('Could not load background image. Ensure "Ashamsa Letter pad.png" is in the public folder.'));
     });
 
     const canvas = document.createElement('canvas');
@@ -119,7 +119,8 @@ document.getElementById('letterForm').addEventListener('submit', async (e) => {
 
     // Add custom font
     try {
-        const fontBase64 = await loadFontAsBase64('/A10-Regular.ttf');
+        const fontUrl = \`\${import.meta.env.BASE_URL}A10-Regular.ttf\`;
+        const fontBase64 = await loadFontAsBase64(fontUrl);
         doc.addFileToVFS('A10-Regular.ttf', fontBase64);
         doc.addFont('A10-Regular.ttf', 'A10', 'normal');
         doc.setFont('A10');
