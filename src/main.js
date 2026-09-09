@@ -3,15 +3,15 @@ import html2canvas from 'html2canvas';
 
 // Inject dynamic font-face for GitHub Pages
 const style = document.createElement('style');
-style.innerHTML = \`
+style.innerHTML = `
 @font-face {
   font-family: 'A10';
-  src: url('\${import.meta.env.BASE_URL}A10-Regular.ttf') format('truetype');
+  src: url('${import.meta.env.BASE_URL}A10-Regular.ttf') format('truetype');
 }
-\`;
+`;
 document.head.appendChild(style);
 
-document.querySelector('#app').innerHTML = \`
+document.querySelector('#app').innerHTML = `
   <div class="app-wrapper">
     <div class="container">
       <h1>Letter Generator</h1>
@@ -50,7 +50,7 @@ document.querySelector('#app').innerHTML = \`
     <div class="preview-container" id="previewContainer" style="display: none;">
       <div class="preview-wrapper">
         <div id="letterPreview" class="letter-preview">
-          <img src="\${import.meta.env.BASE_URL}Ashamsa Letter pad.png" class="bg-img" crossorigin="anonymous" />
+          <img src="${import.meta.env.BASE_URL}Ashamsa Letter pad.png" class="bg-img" crossorigin="anonymous" />
           <div class="letter-text date-block" id="prevDate"></div>
           <div class="letter-text salutation-block" id="prevSalutation"></div>
           <div class="letter-text content-block" id="prevContent"></div>
@@ -62,7 +62,7 @@ document.querySelector('#app').innerHTML = \`
       </button>
     </div>
   </div>
-\`;
+`;
 
 document.getElementById('date').valueAsDate = new Date();
 
@@ -77,7 +77,7 @@ function formatDate(dateString) {
   const day = String(date.getDate()).padStart(2, '0');
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const year = date.getFullYear();
-  return \`\${day}/\${month}/\${year}\`;
+  return `${day}/${month}/${year}`;
 }
 
 // Fit preview scale to screen
@@ -88,8 +88,8 @@ function adjustPreviewScale() {
     const wrapperWidth = wrapper.clientWidth;
     if (wrapperWidth < 794) {
       const scale = wrapperWidth / 820;
-      preview.style.transform = \`scale(\${scale})\`;
-      preview.style.marginBottom = \`-\${1123 * (1 - scale)}px\`;
+      preview.style.transform = `scale(${scale})`;
+      preview.style.marginBottom = `-${1123 * (1 - scale)}px`;
     } else {
       preview.style.transform = 'scale(1)';
       preview.style.marginBottom = '0px';
@@ -114,7 +114,7 @@ document.getElementById('previewBtn').addEventListener('click', () => {
   const formattedDate = formatDate(dateInput);
   const malayalamDay = getMalayalamDay(dateInput);
 
-  document.getElementById('prevDate').innerText = \`\${formattedDate}\\n\${malayalamDay}\`;
+  document.getElementById('prevDate').innerText = `${formattedDate}\n${malayalamDay}`;
   document.getElementById('prevSalutation').innerText = salutation;
   document.getElementById('prevContent').innerText = content;
   document.getElementById('prevSignature').innerText = signature;
