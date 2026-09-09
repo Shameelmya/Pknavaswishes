@@ -100,7 +100,7 @@ document.getElementById('letterForm').addEventListener('submit', async (e) => {
     });
 
     // Add background image
-    const imgUrl = \`\${import.meta.env.BASE_URL}Ashamsa Letter pad.png\`;
+    const imgUrl = `${import.meta.env.BASE_URL}Ashamsa Letter pad.png`;
     const imgElement = new Image();
     imgElement.src = imgUrl;
     await new Promise((resolve, reject) => {
@@ -119,7 +119,7 @@ document.getElementById('letterForm').addEventListener('submit', async (e) => {
 
     // Add custom font
     try {
-        const fontUrl = \`\${import.meta.env.BASE_URL}A10-Regular.ttf\`;
+        const fontUrl = `${import.meta.env.BASE_URL}A10-Regular.ttf`;
         const fontBase64 = await loadFontAsBase64(fontUrl);
         doc.addFileToVFS('A10-Regular.ttf', fontBase64);
         doc.addFont('A10-Regular.ttf', 'A10', 'normal');
