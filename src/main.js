@@ -51,10 +51,12 @@ document.querySelector('#app').innerHTML = `
       <div class="preview-wrapper">
         <div id="letterPreview" class="letter-preview">
           <img src="${import.meta.env.BASE_URL}Ashamsa Letter pad.png" class="bg-img" crossorigin="anonymous" />
-          <div class="letter-text date-block" id="prevDate"></div>
-          <div class="letter-text salutation-block" id="prevSalutation"></div>
-          <div class="letter-text content-block" id="prevContent"></div>
-          <div class="letter-text signature-block" id="prevSignature"></div>
+          <div class="letter-content-wrapper">
+            <div class="letter-text date-block" id="prevDate"></div>
+            <div class="letter-text salutation-block" id="prevSalutation"></div>
+            <div class="letter-text content-block" id="prevContent"></div>
+            <div class="letter-text signature-block" id="prevSignature"></div>
+          </div>
         </div>
       </div>
       <button type="button" id="downloadBtn" class="secondary">

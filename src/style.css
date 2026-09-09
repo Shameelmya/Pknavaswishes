@@ -181,41 +181,51 @@ button.secondary:hover {
 }
 
 .letter-text {
-  position: absolute;
-  z-index: 2;
   font-family: 'A10', sans-serif;
   color: #132047; /* Dark blue */
   line-height: 1.8;
   white-space: pre-wrap;
 }
 
-/* Precise coords for elements based on demo image */
-.date-block {
+.letter-content-wrapper {
+  position: absolute;
   top: 250px;
-  right: 120px;
+  left: 100px;
+  width: 594px; /* 794 - 100 - 100 */
+  height: auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Precise coords for elements based on natural flow */
+.date-block {
+  align-self: flex-end;
   text-align: right;
   font-size: 16px;
   line-height: 1.4;
+  margin-bottom: 2rem;
+  margin-right: 20px;
 }
 
 .salutation-block {
-  top: 360px;
-  left: 100px;
+  align-self: flex-start;
   font-size: 17px;
+  margin-bottom: 1.5rem;
 }
 
 .content-block {
-  top: 410px;
-  left: 100px;
-  width: 594px;
+  align-self: flex-start;
+  width: 100%;
   font-size: 17px;
   text-align: left;
+  margin-bottom: 3.5rem; /* ~2 lines gap before signature */
 }
 
 .signature-block {
-  top: 880px;
-  right: 120px;
+  align-self: flex-end;
   text-align: right;
   font-size: 17px;
   line-height: 1.5;
+  margin-right: 20px;
 }
