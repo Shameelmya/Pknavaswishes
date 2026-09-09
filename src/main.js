@@ -82,19 +82,25 @@ function formatDate(dateString) {
   return `${day}/${month}/${year}`;
 }
 
-// Fit preview scale to screen
+// Fit preview scale to screen perfectly for mobile
 function adjustPreviewScale() {
   const preview = document.getElementById('letterPreview');
   const wrapper = document.querySelector('.preview-wrapper');
-  if (wrapper && preview) {
-    const wrapperWidth = wrapper.clientWidth;
-    if (wrapperWidth < 794) {
-      const scale = wrapperWidth / 820;
+  const container = document.querySelector('.preview-container');
+  if (wrapper && preview && container) {
+    const containerWidth = container.clientWidth - 40; // subtract padding
+    if (containerWidth < 794) {
+      const scale = containerWidth / 794;
       preview.style.transform = `scale(${scale})`;
-      preview.style.marginBottom = `-${1123 * (1 - scale)}px`;
+      preview.style.transformOrigin = 'top left';
+      wrapper.style.width = `${794 * scale}px`;
+      wrapper.style.height = `${1123 * scale}px`;
+      wrapper.style.overflow = 'hidden';
     } else {
-      preview.style.transform = 'scale(1)';
-      preview.style.marginBottom = '0px';
+      preview.style.transform = 'none';
+      wrapper.style.width = '794px';
+      wrapper.style.height = '1123px';
+      wrapper.style.overflow = 'visible';
     }
   }
 }

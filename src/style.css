@@ -182,14 +182,14 @@ button.secondary:hover {
 
 .letter-text {
   font-family: 'A10', sans-serif;
-  color: #132047; /* Dark blue */
+  color: #262b62; /* Exact color requested */
   line-height: 1.8;
   white-space: pre-wrap;
 }
 
 .letter-content-wrapper {
   position: absolute;
-  top: 250px;
+  top: 310px; /* Moved down as requested */
   left: 100px;
   width: 594px; /* 794 - 100 - 100 */
   height: auto;
@@ -202,30 +202,30 @@ button.secondary:hover {
 .date-block {
   align-self: flex-end;
   text-align: right;
-  font-size: 16px;
+  font-size: 17px; /* slightly increased */
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   margin-right: 20px;
 }
 
 .salutation-block {
   align-self: flex-start;
-  font-size: 17px;
+  font-size: 19px; /* slightly increased */
   margin-bottom: 1.5rem;
 }
 
 .content-block {
   align-self: flex-start;
   width: 100%;
-  font-size: 17px;
+  font-size: 19px; /* slightly increased */
   text-align: left;
-  margin-bottom: 3.5rem; /* ~2 lines gap before signature */
+  margin-bottom: 4rem; /* ~2 lines gap before signature */
 }
 
 .signature-block {
   align-self: flex-end;
   text-align: right;
-  font-size: 17px;
+  font-size: 19px; /* slightly increased */
   line-height: 1.5;
   margin-right: 20px;
 }
