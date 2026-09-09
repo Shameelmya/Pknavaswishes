@@ -67,8 +67,8 @@ p.subtitle {
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  font-family: inherit;
-  font-size: 1rem;
+  font-family: 'Noto Sans Malayalam', 'Inter', sans-serif;
+  font-size: 0.875rem;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background-color: #f9fafb;
@@ -83,8 +83,6 @@ p.subtitle {
 }
 
 textarea.form-control {
-  font-family: 'Noto Sans Malayalam', sans-serif;
-  font-size: 0.875rem;
   resize: vertical;
   min-height: 100px;
 }
